@@ -12,7 +12,7 @@ import SwiftUI
 struct EmojiMemoryGameView: View {
   @ObservedObject  var viewModel: EmojiMemoryGame
     var body: some View {
-        HStack{
+        VStack{
             Grid(viewModel.cards) { card  in
                 CardView(card: card)
                     .onTapGesture {
@@ -21,6 +21,10 @@ struct EmojiMemoryGameView: View {
                 .aspectRatio(2/3, contentMode: .fit)
             .padding(3)
             }
+            Button(action:{
+                self.viewModel.restart()
+            } , label: { Text("Start New Game")
+            })
         }
         .padding(3)
         .foregroundColor(.orange)
