@@ -53,7 +53,6 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
         } else {
             indexOfOneAndOnlyFaceUpCard = chosenIndx
         }
-     print(score)
     }
     
     func calcScore()-> Int{
