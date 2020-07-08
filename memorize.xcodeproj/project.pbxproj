@@ -19,6 +19,7 @@
 		640CE74D24A4E8E50005AF7B /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE74C24A4E8E50005AF7B /* GridLayout.swift */; };
 		640CE74F24A744D10005AF7B /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE74E24A744D10005AF7B /* Array+Identifiable.swift */; };
 		640CE75124A771400005AF7B /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE75024A771400005AF7B /* Array+Only.swift */; };
+		64DA6AE824B612E500CF6D4E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA6AE724B612E500CF6D4E /* Theme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		640CE74C24A4E8E50005AF7B /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		640CE74E24A744D10005AF7B /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		640CE75024A771400005AF7B /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		64DA6AE724B612E500CF6D4E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,15 +70,12 @@
 		640CE731249A50A90005AF7B /* memorize */ = {
 			isa = PBXGroup;
 			children = (
-				640CE732249A50A90005AF7B /* AppDelegate.swift */,
-				640CE734249A50A90005AF7B /* SceneDelegate.swift */,
+				64DA6AE624B611DB00CF6D4E /* support */,
+				64DA6AE524B611AB00CF6D4E /* ViewModel */,
+				64DA6AE424B6117700CF6D4E /* Model */,
+				64DA6AE324B6111600CF6D4E /* customView */,
+				64DA6AE224B6110200CF6D4E /* extension */,
 				640CE736249A50A90005AF7B /* EmojiMemoryGameView.swift */,
-				640CE74A24A4E2340005AF7B /* Grid.swift */,
-				640CE74E24A744D10005AF7B /* Array+Identifiable.swift */,
-				640CE74C24A4E8E50005AF7B /* GridLayout.swift */,
-				640CE746249BA9230005AF7B /* MemoryGame.swift */,
-				640CE75024A771400005AF7B /* Array+Only.swift */,
-				640CE748249BADCE0005AF7B /* EmojiMemoryGame.swift */,
 				640CE738249A50AF0005AF7B /* Assets.xcassets */,
 				640CE73D249A50AF0005AF7B /* LaunchScreen.storyboard */,
 				640CE740249A50AF0005AF7B /* Info.plist */,
@@ -91,6 +90,50 @@
 				640CE73B249A50AF0005AF7B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64DA6AE224B6110200CF6D4E /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				640CE74E24A744D10005AF7B /* Array+Identifiable.swift */,
+				640CE75024A771400005AF7B /* Array+Only.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
+		64DA6AE324B6111600CF6D4E /* customView */ = {
+			isa = PBXGroup;
+			children = (
+				640CE74A24A4E2340005AF7B /* Grid.swift */,
+				640CE74C24A4E8E50005AF7B /* GridLayout.swift */,
+			);
+			path = customView;
+			sourceTree = "<group>";
+		};
+		64DA6AE424B6117700CF6D4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				640CE746249BA9230005AF7B /* MemoryGame.swift */,
+				64DA6AE724B612E500CF6D4E /* Theme.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		64DA6AE524B611AB00CF6D4E /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				640CE748249BADCE0005AF7B /* EmojiMemoryGame.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		64DA6AE624B611DB00CF6D4E /* support */ = {
+			isa = PBXGroup;
+			children = (
+				640CE732249A50A90005AF7B /* AppDelegate.swift */,
+				640CE734249A50A90005AF7B /* SceneDelegate.swift */,
+			);
+			path = support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +214,7 @@
 				640CE737249A50A90005AF7B /* EmojiMemoryGameView.swift in Sources */,
 				640CE749249BADCE0005AF7B /* EmojiMemoryGame.swift in Sources */,
 				640CE74F24A744D10005AF7B /* Array+Identifiable.swift in Sources */,
+				64DA6AE824B612E500CF6D4E /* Theme.swift in Sources */,
 				640CE74D24A4E8E50005AF7B /* GridLayout.swift in Sources */,
 				640CE74B24A4E2340005AF7B /* Grid.swift in Sources */,
 			);
