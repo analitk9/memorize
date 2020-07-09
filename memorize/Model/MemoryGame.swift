@@ -12,6 +12,7 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
     var cards: Array<Card>
     var score: Int
     var flippedCard: Set<Int>
+
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter{cards[$0].isFaceUp}.only }
         set {
@@ -26,12 +27,14 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
         score = 0
         cards = [Card]()
         flippedCard = []
+    
         for indx in 0 ..< numberOfPairsOfCards {
             let content = cardContentFactory(indx)
             cards.append(Card(content: content))
             cards.append(Card(content: content))
             
         }
+        
         cards.shuffle()
     }
     

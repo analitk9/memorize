@@ -11,10 +11,13 @@ import Foundation
 class EmojiMemoryGame: ObservableObject {
   
    @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
-       
+   static var themes = Themes()
+ 
+    
     static func createMemoryGame() -> MemoryGame<String> {
-        let emojis = ["😡","🤤","🥶","💩","🤖"]
-        return MemoryGame<String>(numberOfPairsOfCards: Int.random(in: 2...5)){ indx in emojis[indx] }
+       
+        let emojis = themes.currentTheme.emoji //["😡","🤤","🥶","💩","🤖"]
+        return MemoryGame<String>(numberOfPairsOfCards: themes.currentTheme.numberOfPairsOfCards ?? Int.random(in: 2...emojis.count)){ indx in emojis[indx] }
     }
     
    // var objectWillChange: ObservableObjectPublisher
@@ -24,6 +27,8 @@ class EmojiMemoryGame: ObservableObject {
     var cards: Array<MemoryGame<String>.Card> {
         model.cards
     }
+    
+    
     
     // MARK: - Intent(s) намерения
     func choose(card: MemoryGame<String>.Card){
@@ -36,6 +41,7 @@ class EmojiMemoryGame: ObservableObject {
     
     func restart() {
         model = EmojiMemoryGame.createMemoryGame()
+        EmojiMemoryGame.themes.setupNewCurrentTheme()
     }
     
 }
