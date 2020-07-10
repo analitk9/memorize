@@ -16,11 +16,12 @@ struct EmojiMemoryGameView: View {
             HStack{
                  Text("Score: \(viewModel.showScore())")
                 Spacer()
-                Text("\(EmojiMemoryGame.themes.currentTheme.name)")
+                Text("\(viewModel.themes.currentTheme.name)")
             }
            
             Grid(viewModel.cards) { card  in
-                CardView(card: card)
+                CardView(col1: self.viewModel.themes.currentTheme.color.background,
+                         col2: self.viewModel.themes.currentTheme.color.background, card: card)
                     .onTapGesture {
                         self.viewModel.choose(card: card)
                 }
@@ -33,7 +34,7 @@ struct EmojiMemoryGameView: View {
             })
         }
         .padding(3)
-        .foregroundColor(EmojiMemoryGame.themes.currentTheme.color)
+        .foregroundColor(viewModel.themes.currentTheme.color.background)
         
        
         
@@ -41,15 +42,20 @@ struct EmojiMemoryGameView: View {
 }
 
 struct CardView: View {
+    
+    var col1: Color
+    var col2: Color
     var gradient: LinearGradient {
         LinearGradient(
             gradient: Gradient(
-                colors: [Color.black.opacity(0.6), Color.black.opacity(0)]),
+                colors: [col2.opacity(0.8), col1.opacity(0.2)]),
             startPoint: .bottom,
             endPoint: .center)
     }
     
     var card: MemoryGame<String>.Card
+    
+    
     var body: some View {
         GeometryReader { geometry in
             self.body(for: geometry.size)

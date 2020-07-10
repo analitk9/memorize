@@ -10,14 +10,16 @@ import Foundation
 
 class EmojiMemoryGame: ObservableObject {
   
-   @Published private var model: MemoryGame<String> = EmojiMemoryGame.createMemoryGame()
-   static var themes = Themes()
+   @Published private var model: MemoryGame<String>
+   
+    private(set) var themes = Themes()
  
-    
-    static func createMemoryGame() -> MemoryGame<String> {
-       
-        let emojis = themes.currentTheme.emoji //["😡","🤤","🥶","💩","🤖"]
-        return MemoryGame<String>(numberOfPairsOfCards: themes.currentTheme.numberOfPairsOfCards ?? Int.random(in: 2...emojis.count)){ indx in emojis[indx] }
+    init() {
+        model = EmojiMemoryGame.createMemoryGame(theme: themes.currentTheme)
+    }
+    static func createMemoryGame(theme: Theme) -> MemoryGame<String> {
+        let emojis = theme.emoji //["😡","🤤","🥶","💩","🤖"]
+        return MemoryGame<String>(numberOfPairsOfCards: theme.numberOfPairsOfCards ?? Int.random(in: 2...emojis.count)){ indx in emojis[indx] }
     }
     
    // var objectWillChange: ObservableObjectPublisher
@@ -40,8 +42,9 @@ class EmojiMemoryGame: ObservableObject {
     }
     
     func restart() {
-        model = EmojiMemoryGame.createMemoryGame()
-        EmojiMemoryGame.themes.setupNewCurrentTheme()
+        themes.setupNewCurrentTheme()
+        model = EmojiMemoryGame.createMemoryGame(theme: themes.currentTheme)
+        
     }
     
 }
