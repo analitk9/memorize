@@ -12,7 +12,9 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
     var cards: Array<Card>
     var score: Int
     var flippedCard: Set<Int>
-
+    var timeClick: Int
+    
+    
     var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter{cards[$0].isFaceUp}.only }
         set {
@@ -25,6 +27,7 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
     
     init(numberOfPairsOfCards: Int, cardContentFactory: (Int)->CardContent) {
         score = 0
+        timeClick = 0
         cards = [Card]()
         flippedCard = []
     
@@ -38,6 +41,10 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
         cards.shuffle()
     }
     
+    func returnSec()-> Int {
+      Calendar.current.component(.second, from: Date())
+    }
+    
     mutating func choose(card: Card){
       //  print("card chosen\(card)")
         guard let chosenIndx = cards.firstIndex(matching: card), !cards[chosenIndx].isFaceUp, !cards[chosenIndx].isMatched else {return}
@@ -46,9 +53,9 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
             if cards[chosenIndx].content == cards[potentialMatchIndex].content {
                 cards[chosenIndx].isMatched = true
                 cards[potentialMatchIndex].isMatched = true
-                score += 2
+                score += 2 + ( 10 - (returnSec() - timeClick))
             }else {
-                score -= flippedCard.intersection([chosenIndx,potentialMatchIndex]).count
+                score -= flippedCard.intersection([chosenIndx,potentialMatchIndex]).count 
             }
             // кликнули по 2й карте и нет совпадения
             flippedCard.insert(potentialMatchIndex)
@@ -56,6 +63,7 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
             self.cards[chosenIndx].isFaceUp = true
         } else {
             indexOfOneAndOnlyFaceUpCard = chosenIndx
+            timeClick = returnSec()
         }
     }
    
