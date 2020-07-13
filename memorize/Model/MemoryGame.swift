@@ -9,13 +9,13 @@
 import Foundation
 
 struct MemoryGame<CardContent> where CardContent: Hashable {
-    var cards: Array<Card>
-    var score: Int
-    var flippedCard: Set<Int>
-    var timeClick: Int
+   private(set) var cards: Array<Card>
+   private(set) var score: Int
+   private var flippedCard: Set<Int>
+   private var timeClick: Int
     
     
-    var indexOfOneAndOnlyFaceUpCard: Int? {
+   private var indexOfOneAndOnlyFaceUpCard: Int? {
         get { cards.indices.filter{cards[$0].isFaceUp}.only }
         set {
             for indx in cards.indices {
@@ -41,7 +41,7 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
         cards.shuffle()
     }
     
-    func returnSec()-> Int {
+   private func returnSec()-> Int {
       Calendar.current.component(.second, from: Date())
     }
     
@@ -55,7 +55,7 @@ struct MemoryGame<CardContent> where CardContent: Hashable {
                 cards[potentialMatchIndex].isMatched = true
                 score += 2 + ( 10 - (returnSec() - timeClick))
             }else {
-                score -= flippedCard.intersection([chosenIndx,potentialMatchIndex]).count 
+                score -= flippedCard.intersection([chosenIndx,potentialMatchIndex]).count
             }
             // кликнули по 2й карте и нет совпадения
             flippedCard.insert(potentialMatchIndex)

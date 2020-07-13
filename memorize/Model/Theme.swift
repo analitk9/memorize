@@ -11,7 +11,7 @@ import SwiftUI
 
 struct Themes {
     private(set) var themes: [Theme]
-    var currentTheme: Theme
+    private(set) var currentTheme: Theme
     init() {
         let theme1 = Theme(name: "hallowin", emoji: ["👹","👽","💀","👻","🎃","🤖"],
                            numberOfPairsOfCards: nil, color: (background:  Color(#colorLiteral(red: 0.9372549057, green: 0.3490196168, blue: 0.1921568662, alpha: 1)), stroke: Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1))))

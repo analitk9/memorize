@@ -19,6 +19,8 @@
 		640CE74D24A4E8E50005AF7B /* GridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE74C24A4E8E50005AF7B /* GridLayout.swift */; };
 		640CE74F24A744D10005AF7B /* Array+Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE74E24A744D10005AF7B /* Array+Identifiable.swift */; };
 		640CE75124A771400005AF7B /* Array+Only.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CE75024A771400005AF7B /* Array+Only.swift */; };
+		6437C82024B899D600B9AD9C /* Cardify.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6437C81F24B899D600B9AD9C /* Cardify.swift */; };
+		64A9E22424B88B8500514AAA /* Pie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A9E22324B88B8500514AAA /* Pie.swift */; };
 		64DA6AE824B612E500CF6D4E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DA6AE724B612E500CF6D4E /* Theme.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +39,8 @@
 		640CE74C24A4E8E50005AF7B /* GridLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayout.swift; sourceTree = "<group>"; };
 		640CE74E24A744D10005AF7B /* Array+Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Identifiable.swift"; sourceTree = "<group>"; };
 		640CE75024A771400005AF7B /* Array+Only.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Only.swift"; sourceTree = "<group>"; };
+		6437C81F24B899D600B9AD9C /* Cardify.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cardify.swift; sourceTree = "<group>"; };
+		64A9E22324B88B8500514AAA /* Pie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pie.swift; sourceTree = "<group>"; };
 		64DA6AE724B612E500CF6D4E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,8 +108,10 @@
 		64DA6AE324B6111600CF6D4E /* customView */ = {
 			isa = PBXGroup;
 			children = (
+				64A9E22324B88B8500514AAA /* Pie.swift */,
 				640CE74A24A4E2340005AF7B /* Grid.swift */,
 				640CE74C24A4E8E50005AF7B /* GridLayout.swift */,
+				6437C81F24B899D600B9AD9C /* Cardify.swift */,
 			);
 			path = customView;
 			sourceTree = "<group>";
@@ -213,8 +219,10 @@
 				640CE75124A771400005AF7B /* Array+Only.swift in Sources */,
 				640CE737249A50A90005AF7B /* EmojiMemoryGameView.swift in Sources */,
 				640CE749249BADCE0005AF7B /* EmojiMemoryGame.swift in Sources */,
+				6437C82024B899D600B9AD9C /* Cardify.swift in Sources */,
 				640CE74F24A744D10005AF7B /* Array+Identifiable.swift in Sources */,
 				64DA6AE824B612E500CF6D4E /* Theme.swift in Sources */,
+				64A9E22424B88B8500514AAA /* Pie.swift in Sources */,
 				640CE74D24A4E8E50005AF7B /* GridLayout.swift in Sources */,
 				640CE74B24A4E2340005AF7B /* Grid.swift in Sources */,
 			);

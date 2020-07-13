@@ -17,7 +17,7 @@ class EmojiMemoryGame: ObservableObject {
     init() {
         model = EmojiMemoryGame.createMemoryGame(theme: themes.currentTheme)
     }
-    static func createMemoryGame(theme: Theme) -> MemoryGame<String> {
+   private static func createMemoryGame(theme: Theme) -> MemoryGame<String> {
         let emojis = theme.emoji //["😡","🤤","🥶","💩","🤖"]
         return MemoryGame<String>(numberOfPairsOfCards: theme.numberOfPairsOfCards ?? Int.random(in: 2...emojis.count)){ indx in emojis[indx] }
     }
